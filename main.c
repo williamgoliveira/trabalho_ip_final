@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+int menu(){
+    printf("Insira a opção desejada:\n"); 
+    return 0;
+}
+
 int main(){
     printf("Hello World");
 
