@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int menu(){
-    printf("Insira a opÃ§Ã£o desejada:\n"); 
+    printf("Insira a opção desejada:\n"); 
     return 0;
 }
 
