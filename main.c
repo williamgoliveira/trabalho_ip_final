@@ -114,6 +114,7 @@ void registrar_Livro(){
     total_livros++;
 
     printf("\nLivro Cadastrado com sucesso!\n");
+    salvar_Arquivos();
 }
 
 void mostrar_Livro(){
