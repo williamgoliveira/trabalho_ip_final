@@ -143,3 +143,8 @@ void mostrar_Livro(){
     printf("\nTotal de livros Cadastrados: %d\n", total_livros);
 
 }
+
+int main () {
+	printf("Hello World!");
+	return 0;
+}
