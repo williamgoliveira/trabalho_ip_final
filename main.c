@@ -43,7 +43,7 @@ void menu(){
         printf("\n2. Mostrar Livros\n");
         printf("\n0. Sair\n");
     
-        printf("\nInforme a opção desejada: ");
+        printf("\nInforme a opï¿½ï¿½o desejada: ");
         scanf("%d", &escolha);
 
         switch (escolha)
@@ -51,7 +51,7 @@ void menu(){
        case 1:registrar_Livro();break;
        case 2:mostrar_Livro();break; 
        case 0:salvar_Arquivos();printf("ENCERRANDO O PROGRAMA");exit(0);break;;
-       default:printf("Opcção inválida!");
+       default:printf("Opcï¿½ï¿½o invï¿½lida!");
         break;
        }
         
@@ -100,7 +100,7 @@ void registrar_Livro(){
     scanf("%99[^\n]s", livro.autor);
     fflush(stdin);
 
-    printf("Informe o ano de publicação do livro: ");
+    printf("Informe o ano de publicaï¿½ï¿½o do livro: ");
     scanf("%d", &livro.ano_publicacao);
     getchar();
 
@@ -128,23 +128,18 @@ void mostrar_Livro(){
     {
         printf("\nLivro %d:\n", i+1);
         printf("ID: %d\n", Livros[i].isbn);
-        printf("Título: %s\n", Livros[i].titulo);
+        printf("Tï¿½tulo: %s\n", Livros[i].titulo);
         printf("Autor: %s\n", Livros[i].autor);
-        printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
+        printf("Ano de Publicaï¿½ï¿½o: %d\n", Livros[i].ano_publicacao);
         printf("Categoria: %s\n", Livros[i].categoria);
         if (Livros[i].status)
         {
-            printf("Status: Disponível\n");
-        }else{printf("Status: Indisponível\n");}
+            printf("Status: Disponï¿½vel\n");
+        }else{printf("Status: Indisponï¿½vel\n");}
         printf("\n");
         
     }
     
     printf("\nTotal de livros Cadastrados: %d\n", total_livros);
 
-}
-
-int main () {
-	printf("Hello World!");
-	return 0;
 }
