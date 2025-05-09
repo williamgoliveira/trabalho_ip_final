@@ -84,7 +84,7 @@ void registrar_Livro(){
     
     system("cls");
     Livro livro;
-    //char c;
+    
 
     printf("\n<-=CADASTRO DE LIVROS=->\n");
 
@@ -93,20 +93,20 @@ void registrar_Livro(){
     getchar();
 
     printf("Informe o NOME do livro: ");
-    scanf("%99[^\n]s", livro.titulo);
-    fflush(stdin);
+    fgets(livro.titulo, sizeof(livro.titulo), stdin);
+    livro.titulo[strcspn(livro.titulo, "\n")] = '\0';
 
     printf("Informe o AUTOR do livro: ");
-    scanf("%99[^\n]s", livro.autor);
-    fflush(stdin);
+    fgets(livro.autor, sizeof(livro.autor), stdin);
+    livro.autor[strcspn(livro.autor, "\n")] = '\0';
 
     printf("Informe o ano de publicação do livro: ");
     scanf("%d", &livro.ano_publicacao);
     getchar();
 
     printf("Informe a CATEGORIA do livro: ");
-    scanf("%99[^\n]s", livro.categoria);
-    fflush(stdin);
+    fgets(livro.categoria, sizeof(livro.categoria), stdin);
+    livro.categoria[strcspn(livro.categoria, "\n")] = '\0';
 
     livro.status = 1;
 
