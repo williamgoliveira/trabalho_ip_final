@@ -1,110 +1,74 @@
 #include "../include/prototypes.h"
 
-void buscar_Livro(){
+char *busca_case_insensitive(const char *texto, const char *busca);
+
+void buscarLivros(Livro livros[], int n){
+    
     system("cls");
-    int escolha;
-
-    printf("\n<-=Buscar Livros=->\n");
-    printf("1. Buscar por TÍTULO\n");
-    printf("2. Buscar por AUTOR\n");
+    int opcao;
+    char termo[100];
+    int encontrados = 0;
     
-    printf("Informe a Opção desejada: ");
-    scanf("%d", &escolha);
-
-    switch (escolha)
-    {
-    case 1:{
-        system("cls");
-        char chave_titulo[100];
-        char *p_titulo;
-        int encontrado = 0;
+    
+    printf("\nEscolha o tipo de busca:\n");
+    printf("1 - Buscar por título\n");
+    printf("2 - Buscar por autor\n");
+    printf("Opção: ");
+    scanf("%d", &opcao);
+    getchar(); 
+    
+    printf("Digite o termo de busca: ");
+    fgets(termo, 100, stdin);
+    termo[strcspn(termo, "\n")] = '\0'; 
+    
+    printf("\nResultados da busca:\n");
+    
+    for (int i = 0; i < n; i++) {
+        int match = 0;
         
-        getchar();
-        printf("Pesquisar por TÍTULO: ");
-        fgets(chave_titulo, sizeof(chave_titulo), stdin);
-        chave_titulo[strcspn(chave_titulo, "\n")] = '\0';
-        converte_String(chave_titulo);
-        
-        
-        for (int i = 0; i < total_livros; i++)
-        {
-            
-            char temp_titulo[100];
-            strcpy(temp_titulo, Livros[i].titulo);
-            converte_String(temp_titulo);
-            p_titulo = strstr(temp_titulo, chave_titulo);
-
-            if (p_titulo)
-            {
-                printf("\nLivro %d:\n", i+1);
-                printf("ID: %d\n", Livros[i].isbn);
-                printf("TÍTULO: %s\n", Livros[i].titulo);
-                printf("Autor: %s\n", Livros[i].autor);
-                printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
-                printf("Categoria: %s\n", Livros[i].categoria);
-
-                if (Livros[i].status)
-                {
-                    printf("Status: Disponível\n");
-                }else{printf("Status: Indisponível\n");}
-
-                encontrado = 1;
+        if (opcao == 1) {
+            // Busca por título (case insensitive)
+            if (strcasestr_manual(livros[i].titulo, termo) != NULL) {
+                match = 1;
+            }
+        } else if (opcao == 2) {
+            // Busca por autor (case insensitive)
+            if (strcasestr_manual(livros[i].autor, termo) != NULL) {
+                match = 1;
             }
         }
-        if (!encontrado)
-        {
-            printf("Livro não encontrado!");
-        }
         
-        break;
+        if (match) {
+            printf("\nLivro %d:\n", i+1);
+            printf("Título: %s\n", livros[i].titulo);
+            printf("Autor: %s\n", livros[i].autor);
+            printf("ISBN: %d\n", livros[i].isbn);
+            printf("Gênero: %s\n", livros[i].categoria);
+            printf("Ano de Publicação: %d\n", livros[i].ano_publicacao);
+            printf("Status:%s\n" , livros[i].status );
+            encontrados++;
+        }
     }
     
-    case 2:{
-        system("cls");
-        getchar();
-        
-        char chave_autor[100];
-        char *p_autor;
-        int encontrado = 0;
+    if (encontrados == 0) {
+        printf("Nenhum livro encontrado com o termo \"%s\".\n", termo);
+    } else {
+        printf("\nTotal de livros encontrados: %d\n", encontrados);
+    }
+}
 
-        printf("Pesquisar por AUTOR: ");
-        fgets(chave_autor, sizeof(chave_autor), stdin);
-        chave_autor[strcspn(chave_autor, "\n")] = '\0';
-        converte_String(chave_autor);
-        
-        for (int i = 0; i < total_livros; i++)
-        {
-            char temp_autor[100];
-            strcpy(temp_autor, Livros[i].autor);
-            converte_String(temp_autor);
-            p_autor = strstr(temp_autor, chave_autor);
+char *busca_case_insensitive(const char *texto, const char *busca) {
+    if (!busca || !*busca) return (char *)texto; 
 
-            if (p_autor)
-            {
-                printf("\nLivro %d:\n", i+1);
-                printf("ID: %d\n", Livros[i].isbn);
-                printf("TÍTULO: %s\n", Livros[i].titulo);
-                printf("Autor: %s\n", Livros[i].autor);
-                printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
-                printf("Categoria: %s\n", Livros[i].categoria);
-                
-                if (Livros[i].status)
-                {
-                    printf("Status: Disponível\n");
-                }else{printf("Status: Indisponível\n");}
-                encontrado = 1;
+    for (; *texto; texto++) {
+        if (tolower((unsigned char)*texto) == tolower((unsigned char)*busca)) {
+            const char *t = texto, *b = busca;
+            while (*t && *b && tolower((unsigned char)*t) == tolower((unsigned char)*b)) {
+                t++;
+                b++;
             }
-            
+            if (!*b) return (char *)texto; 
         }
-        if (!encontrado)
-        {
-            printf("Autor não encontrado!");
-        }
-        break;
     }
-
-    default:
-        printf("Opção inválida!");
-        break;
-    }
+    return NULL; 
 }
