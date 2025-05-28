@@ -35,5 +35,7 @@ void salvar_Arquivos(){
     fwrite(&total_emprestimos, sizeof(int), 1, p);
     fwrite(Emprestimos, sizeof(Emprestimos), total_emprestimos, p);
     fclose(p);
+
+    
     
 }

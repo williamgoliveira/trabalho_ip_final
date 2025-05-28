@@ -52,4 +52,7 @@ void gerar_Multa();
 void relatorio();
 
 int pesquisa();
+
+char *compare_strings(const char *texto, const char *busca);
+    
 #endif

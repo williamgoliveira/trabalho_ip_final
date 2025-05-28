@@ -8,6 +8,7 @@ int main(){
 
     carregar_Arquivos();
     menu();
+ 
 
     return 0;
     

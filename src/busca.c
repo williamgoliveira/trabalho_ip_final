@@ -1,8 +1,6 @@
 #include "../include/prototypes.h"
 
-char *compare_string(const char *texto, const char *busca);
-
-void buscar_Livro(Livro livros[], int n){
+void buscar_Livro(){
     
     system("cls");
     int opcao;
@@ -23,29 +21,29 @@ void buscar_Livro(Livro livros[], int n){
     
     printf("\nResultados da busca:\n");
     
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i <  total_livros ; i++) {
         int match = 0;
         
         if (opcao == 1) {
             // Busca por título (case insensitive)
-            if (compare_string(livros[i].titulo, termo) != NULL) {
+            if (compare_strings(Livros[i].titulo, termo) != NULL) {
                 match = 1;
             }
         } else if (opcao == 2) {
             // Busca por autor (case insensitive)
-            if (compare_string(livros[i].autor, termo) != NULL) {
+            if (compare_strings(Livros[i].autor, termo) != NULL) {
                 match = 1;
             }
         }
         
         if (match) {
             printf("\nLivro %d:\n", i+1);
-            printf("Título: %s\n", livros[i].titulo);
-            printf("Autor: %s\n", livros[i].autor);
-            printf("ISBN: %d\n", livros[i].isbn);
-            printf("Gênero: %s\n", livros[i].categoria);
-            printf("Ano de Publicação: %d\n", livros[i].ano_publicacao);
-            printf("Status:%s\n" , livros[i].status );
+            printf("Título: %s\n", Livros[i].titulo);
+            printf("Autor: %s\n", Livros[i].autor);
+            printf("ISBN: %d\n", Livros[i].isbn);
+            printf("Gênero: %s\n", Livros[i].categoria);
+            printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
+            printf("Status:%s\n" , Livros[i].status );
             encontrados++;
         }
     }
@@ -57,18 +55,5 @@ void buscar_Livro(Livro livros[], int n){
     }
 }
 
-char *compare_string(const char *texto, const char *busca) {
-    if (!busca || !*busca) return (char *)texto; 
 
-    for (; *texto; texto++) {
-        if (tolower((unsigned char)*texto) == tolower((unsigned char)*busca)) {
-            const char *t = texto, *b = busca;
-            while (*t && *b && tolower((unsigned char)*t) == tolower((unsigned char)*b)) {
-                t++;
-                b++;
-            }
-            if (!*b) return (char *)texto; 
-        }
-    }
-    return NULL; 
-}
+
