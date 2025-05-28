@@ -5,10 +5,10 @@ void buscar_Livro(){
     int escolha;
 
     printf("\n<-=Buscar Livros=->\n");
-    printf("1. Buscar por Tï¿½TULO\n");
+    printf("1. Buscar por TÍTULO\n");
     printf("2. Buscar por AUTOR\n");
     
-    printf("Informe a opï¿½ï¿½o desejada: ");
+    printf("Informe a Opção desejada: ");
     scanf("%d", &escolha);
 
     switch (escolha)
@@ -20,7 +20,7 @@ void buscar_Livro(){
         int encontrado = 0;
         
         getchar();
-        printf("Pesquisar por Tï¿½TULO: ");
+        printf("Pesquisar por TÍTULO: ");
         fgets(chave_titulo, sizeof(chave_titulo), stdin);
         chave_titulo[strcspn(chave_titulo, "\n")] = '\0';
         converte_String(chave_titulo);
@@ -38,22 +38,22 @@ void buscar_Livro(){
             {
                 printf("\nLivro %d:\n", i+1);
                 printf("ID: %d\n", Livros[i].isbn);
-                printf("Tï¿½tulo: %s\n", Livros[i].titulo);
+                printf("TÍTULO: %s\n", Livros[i].titulo);
                 printf("Autor: %s\n", Livros[i].autor);
-                printf("Ano de Publicaï¿½ï¿½o: %d\n", Livros[i].ano_publicacao);
+                printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
                 printf("Categoria: %s\n", Livros[i].categoria);
 
                 if (Livros[i].status)
                 {
-                    printf("Status: Disponï¿½vel\n");
-                }else{printf("Status: Indisponï¿½ï¿½vel\n");}
+                    printf("Status: Disponível\n");
+                }else{printf("Status: Indisponível\n");}
 
                 encontrado = 1;
             }
         }
         if (!encontrado)
         {
-            printf("Livro nï¿½o encontrado!");
+            printf("Livro não encontrado!");
         }
         
         break;
@@ -83,28 +83,28 @@ void buscar_Livro(){
             {
                 printf("\nLivro %d:\n", i+1);
                 printf("ID: %d\n", Livros[i].isbn);
-                printf("Tï¿½tulo: %s\n", Livros[i].titulo);
+                printf("TÍTULO: %s\n", Livros[i].titulo);
                 printf("Autor: %s\n", Livros[i].autor);
-                printf("Ano de Publicaï¿½ï¿½o: %d\n", Livros[i].ano_publicacao);
+                printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
                 printf("Categoria: %s\n", Livros[i].categoria);
                 
                 if (Livros[i].status)
                 {
-                    printf("Status: Disponï¿½vel\n");
-                }else{printf("Status: Indisponï¿½vel\n");}
+                    printf("Status: Disponível\n");
+                }else{printf("Status: Indisponível\n");}
                 encontrado = 1;
             }
             
         }
         if (!encontrado)
         {
-            printf("Autor nï¿½o encontrado!");
+            printf("Autor não encontrado!");
         }
         break;
     }
 
     default:
-        printf("Opï¿½ï¿½o Invï¿½lida!");
+        printf("Opção inválida!");
         break;
     }
 }
