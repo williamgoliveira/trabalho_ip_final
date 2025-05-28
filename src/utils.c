@@ -7,7 +7,7 @@ void converte_String(char *str){
     }
 }
 
-char *strcasestr_manual(const char *texto, const char *busca) {
+char *compare_strings(const char *texto, const char *busca) {
     if (!busca || !*busca) return (char *)texto; 
 
     for (; *texto; texto++) {

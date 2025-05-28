@@ -1,6 +1,6 @@
 #include "../include/prototypes.h"
 
-char *busca_case_insensitive(const char *texto, const char *busca);
+char *compare_string(const char *texto, const char *busca);
 
 void buscarLivros(Livro livros[], int n){
     
@@ -28,12 +28,12 @@ void buscarLivros(Livro livros[], int n){
         
         if (opcao == 1) {
             // Busca por título (case insensitive)
-            if (strcasestr_manual(livros[i].titulo, termo) != NULL) {
+            if (compare_string(livros[i].titulo, termo) != NULL) {
                 match = 1;
             }
         } else if (opcao == 2) {
             // Busca por autor (case insensitive)
-            if (strcasestr_manual(livros[i].autor, termo) != NULL) {
+            if (compare_string(livros[i].autor, termo) != NULL) {
                 match = 1;
             }
         }
@@ -57,7 +57,7 @@ void buscarLivros(Livro livros[], int n){
     }
 }
 
-char *busca_case_insensitive(const char *texto, const char *busca) {
+char *compare_string(const char *texto, const char *busca) {
     if (!busca || !*busca) return (char *)texto; 
 
     for (; *texto; texto++) {
