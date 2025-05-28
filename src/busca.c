@@ -2,7 +2,7 @@
 
 char *compare_string(const char *texto, const char *busca);
 
-void buscarLivros(Livro livros[], int n){
+void buscar_Livro(Livro livros[], int n){
     
     system("cls");
     int opcao;
