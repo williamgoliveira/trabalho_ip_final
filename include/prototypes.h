@@ -41,7 +41,7 @@ void carregar_Arquivos();
 
 void converte_String(char *str);
 
-void buscar_Livro();
+void buscar_Livro(Livro Livros[100] , int total_livros);
 
 void emprestar_Livro();
 

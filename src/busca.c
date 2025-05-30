@@ -1,6 +1,6 @@
 #include "../include/prototypes.h"
 
-void buscar_Livro(){
+void buscar_Livro(Livro Livros[100], int total_livros){
     
     system("cls");
     int opcao;
@@ -43,7 +43,13 @@ void buscar_Livro(){
             printf("ISBN: %d\n", Livros[i].isbn);
             printf("Gênero: %s\n", Livros[i].categoria);
             printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
-            printf("Status:%s\n" , Livros[i].status );
+            if (Livros[i].status)
+                {
+            printf("Status: Disponível\n");
+            }
+            else{
+                printf("Status: Indisponível\n");
+            }
             encontrados++;
         }
     }

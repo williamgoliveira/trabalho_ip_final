@@ -20,7 +20,7 @@ void menu(){
        {
        case 1:registrar_Livro();break;
        case 2:relatorio();break;
-       case 3:buscar_Livro();break;
+       case 3:buscar_Livro(Livros , total_livros);break;
        case 4://emprestar_Livro();break;
        case 0:salvar_Arquivos();printf("ENCERRANDO O PROGRAMA");exit(0);break;
        default:printf("Opção inválida!");
