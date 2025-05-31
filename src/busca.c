@@ -14,7 +14,7 @@ void buscar_Livro(Livro Livros[100], int total_livros){
     printf("Opção: ");
     scanf("%d", &opcao);
     getchar(); 
-    
+     
     printf("Digite o termo de busca: ");
     fgets(termo, 100, stdin);
     termo[strcspn(termo, "\n")] = '\0'; 
@@ -25,7 +25,7 @@ void buscar_Livro(Livro Livros[100], int total_livros){
         int match = 0;
         
         if (opcao == 1) {
-            // Busca por título (case insensitive)
+            // Busca por tï¿½tulo (case insensitive)
             if (compare_strings(Livros[i].titulo, termo) != NULL) {
                 match = 1;
             }
@@ -42,7 +42,7 @@ void buscar_Livro(Livro Livros[100], int total_livros){
             printf("Autor: %s\n", Livros[i].autor);
             printf("ISBN: %d\n", Livros[i].isbn);
             printf("Gênero: %s\n", Livros[i].categoria);
-            printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
+            printf("Ano de Publição: %d\n", Livros[i].ano_publicacao);
             if (Livros[i].status)
                 {
             printf("Status: Disponível\n");

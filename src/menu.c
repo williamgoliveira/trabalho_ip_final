@@ -26,6 +26,6 @@ void menu(){
        default:printf("Opção inválida!");
         break;
        }
-        
+    
     }
 }
