@@ -13,7 +13,7 @@ void menu(){
         printf("\n4. Emprestar Livro\n");
         printf("\n0. Sair\n");
     
-        printf("\nInforme a opÁ„o desejada: ");
+        printf("\nInforme a op√ß√£o desejada: ");
         scanf("%d", &escolha);
 
         switch (escolha)
@@ -21,9 +21,9 @@ void menu(){
        case 1:registrar_Livro();break;
        case 2:relatorio();break;
        case 3:buscar_Livro(Livros , total_livros);break;
-       case 4://emprestar_Livro();break;
+       case 4:emprestar_Livro();break;
        case 0:salvar_Arquivos();printf("ENCERRANDO O PROGRAMA");exit(0);break;
-       default:printf("OpÁ„o inv·lida!");
+       default:printf("Op√ß√£o inv√°lida!");
         break;
        }
     
