@@ -18,7 +18,7 @@ typedef struct {
 } Livro;
 
 typedef struct {
-    char usuario[50];
+    int ID_usuario;
     struct tm data_emprestimo;
     struct tm data_devolucao;
     char livro_emprestado[50];
@@ -49,9 +49,11 @@ void devolver_Livro();
 
 void gerar_Multa();
 
-void relatorio();
+void catalogo();
 
-int pesquisa();
+void relatorio_geral();
+
+void relatorio_emprestimos();
 
 char *compare_strings(const char *texto, const char *busca);
     

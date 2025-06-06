@@ -1,6 +1,6 @@
 #include "../include/prototypes.h"
 
-void relatorio(){
+void catalogo(){
     
     if (total_livros == 0) {
         printf("Nenhum livro cadastrado.\n");
