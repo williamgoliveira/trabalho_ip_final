@@ -9,9 +9,9 @@ void relatorio_emprestimos(){
             int emp_dia = Emprestimos[i].data_emprestimo.tm_mday, emp_mes = Emprestimos[i].data_emprestimo.tm_mon, emp_ano = Emprestimos[i].data_emprestimo.tm_year;
             int dev_dia =Emprestimos[i].data_devolucao.tm_mday, dev_mes = Emprestimos[i].data_devolucao.tm_mon, dev_ano = Emprestimos[i].data_devolucao.tm_year;
             flag = 1;
-            printf("%s/n", Emprestimos[i].livro_emprestado);
-            printf("Emprestado: %d/%d/%d/n", emp_dia, emp_mes, emp_ano);
-            printf("Devolvido: %d/%d/%d/n", dev_dia, dev_ano, dev_mes);
+            printf("%s\n", Emprestimos[i].livro_emprestado);
+            printf("Emprestado: %d/%d/%d\n", emp_dia, emp_mes, emp_ano);
+            printf("Devolução: %d/%d/%d\n", dev_dia, dev_ano, dev_mes);
         }
     }
     if (flag == 0) {
