@@ -13,14 +13,15 @@ void emprestar_Livro() {
     int dias;
 
     printf("\n<-= EMPRÉSTIMO DE LIVRO =->\n");
-    
+    getchar();
+   
     // Input do livro
     printf("Digite o título do livro: ");
     fgets(livro, sizeof(livro), stdin);
     livro[strcspn(livro, "\n")] = '\0';
 
-    // Input do usuário
-    printf("Digite o nome do usuário: ");
+    // Input do usuï¿½rio
+    printf("\nDigite o nome do usuário: ");
     fgets(usuario, sizeof(usuario), stdin);
     usuario[strcspn(usuario, "\n")] = '\0';
 
@@ -48,7 +49,7 @@ void emprestar_Livro() {
         return;
     }
 
-    // Verifica limite de empréstimos
+    // Verifica limite de emprï¿½stimos
     if(total_emprestimos >= 100) {
         printf("Limite máximo de empréstimos atingido!\n");
         return;
@@ -57,7 +58,7 @@ void emprestar_Livro() {
     // Atualiza status do livro
     Livros[idx].status = 0;
 
-    // Registra o empréstimo
+    // Registra o emprï¿½stimo
     time_t now = time(NULL);
     Emprestimos[total_emprestimos] = (Emprestimo){
         .data_emprestimo = *localtime(&now),
