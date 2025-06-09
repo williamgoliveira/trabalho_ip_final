@@ -1,6 +1,7 @@
 #include "../include/prototypes.h"
 
-void registrar_Livro(){
+void registrar_Livro()
+{
     system("cls");
     Livro livro;
 

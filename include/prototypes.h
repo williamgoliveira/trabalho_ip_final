@@ -8,7 +8,8 @@
 #include <ctype.h>
 #include <time.h>
 
-typedef struct {
+typedef struct
+{
     int isbn;
     char titulo[100];
     char autor[100];
@@ -17,7 +18,8 @@ typedef struct {
     int status;
 } Livro;
 
-typedef struct {
+typedef struct
+{
     int ID_usuario;
     struct tm data_emprestimo;
     struct tm data_devolucao;

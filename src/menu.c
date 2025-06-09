@@ -21,17 +21,23 @@ void menu(){
         scanf("%d", &escolha);
 
         switch (escolha)
-       {
-       case 1:registrar_Livro();break;
-       case 2:catalogo();break;
-       case 3:buscar_Livro(Livros , total_livros);break;
-       case 4:emprestar_Livro();break;
-       case 5:relatorio_geral();break;
-       case 6:relatorio_emprestimos();break;
-       case 0:salvar_Arquivos();printf("ENCERRANDO O PROGRAMA");exit(0);break;
-       default:printf("Opção inválida!");
-        break;
-       }
-    
+        {
+            case 1:
+                registrar_Livro(); break;
+            case 2:
+                catalogo(); break;
+            case 3:
+                buscar_Livro(Livros , total_livros); break;
+            case 4:
+                emprestar_Livro(); break;
+            case 5:
+                relatorio_geral(); break;
+            case 6:
+                relatorio_emprestimos(); break;
+            case 0:salvar_Arquivos(); 
+                printf("ENCERRANDO O PROGRAMA"); exit(0); break;
+            default:
+                printf("Opção inválida!"); break;
+        }
     }
 }

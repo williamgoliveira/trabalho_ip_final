@@ -1,9 +1,12 @@
 #include "../include/prototypes.h"
 
-void carregar_Arquivos(){
+void carregar_Arquivos()
+{
     FILE *arquivo = fopen("bin_files/livros.bin", "rb");
     FILE *p = fopen("bin_files/emprestimos.bin", "rb");
-    if (arquivo == NULL) {
+
+    if (arquivo == NULL)
+    {
         total_livros = 0;
         return;
     }
@@ -23,8 +26,8 @@ void carregar_Arquivos(){
     fclose(p);
 }
 
-void salvar_Arquivos(){
-
+void salvar_Arquivos()
+{
     FILE *arquivo = fopen("bin_files/livros.bin", "wb");
     FILE *p = fopen("bin_files/emprestimos.bin", "wb");
 
@@ -36,6 +39,4 @@ void salvar_Arquivos(){
     fwrite(Emprestimos, sizeof(Emprestimos), total_emprestimos, p);
     fclose(p);
 
-    
-    
 }

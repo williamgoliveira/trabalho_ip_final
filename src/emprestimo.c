@@ -1,10 +1,12 @@
 #include "../include/prototypes.h"
 #include <time.h>
 
-void emprestar_Livro() {
+void emprestar_Livro()
+{
     system("cls");
     
-    if (total_livros == 0) {
+    if (total_livros == 0)
+    {
         printf("Nenhum livro cadastrado para empréstimo.\n");
         return;
     }
@@ -14,28 +16,27 @@ void emprestar_Livro() {
 
     printf("\n<-= EMPRÉSTIMO DE LIVRO =->\n");
     getchar();
-   
-    // Input do livro
+
     printf("Digite o título do livro: ");
     fgets(livro, sizeof(livro), stdin);
     livro[strcspn(livro, "\n")] = '\0';
 
-    // Input do usuário
     printf("\nDigite o ID do usuário: ");
     scanf("%d", &ID_usuario);
 
-    // Input dos dias
     printf("Digite o prazo em dias: ");
-    while(scanf("%d", &dias) != 1 || dias <= 0) {
+    while(scanf("%d", &dias) != 1 || dias <= 0)
+    {
         printf("Valor inválido! Digite novamente: ");
-        while(getchar() != '\n'); // Limpa buffer
+        while(getchar() != '\n');
     }
     getchar();
 
-    // Busca o livro
     int idx = -1;
-    for(int i = 0; i < total_livros; i++) {
-        if(compare_strings(Livros[i].titulo, livro) && Livros[i].status == 1) {
+    for(int i = 0; i < total_livros; i++)
+    {
+        if(compare_strings(Livros[i].titulo, livro) && Livros[i].status == 1)
+        {
             idx = i;
             printf("Livro encontrado: %s\n", Livros[idx].titulo);
 
@@ -43,23 +44,23 @@ void emprestar_Livro() {
         }
     }
 
-    if(idx == -1) {
+    if(idx == -1)
+    {
         printf("\nLivro não encontrado ou indisponível.\n");
         return;
     }
 
-    // Verifica limite de empréstimos
-    if(total_emprestimos >= 100) {
+    if(total_emprestimos >= 100)
+    {
         printf("Limite máximo de empréstimos atingido!\n");
         return;
     }
 
-    // Atualiza status do livro
     Livros[idx].status = 0;
 
-    // Registra o emprï¿½stimo
     time_t now = time(NULL);
-    Emprestimos[total_emprestimos] = (Emprestimo){
+    Emprestimos[total_emprestimos] = (Emprestimo)
+    {
         .data_emprestimo = *localtime(&now),
         .data_devolucao = *localtime(&(time_t){now + dias * 86400}),
     };
