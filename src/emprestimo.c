@@ -12,7 +12,7 @@ void emprestar_Livro()
     }
 
     char livro[100];
-    int dias, ID_usuario;
+    int prazo, ID_usuario;
 
     printf("\n<-= EMPRÉSTIMO DE LIVRO =->\n");
     getchar();
@@ -25,26 +25,24 @@ void emprestar_Livro()
     scanf("%d", &ID_usuario);
 
     printf("Digite o prazo em dias: ");
-    while(scanf("%d", &dias) != 1 || dias <= 0)
+    while(scanf("%d", &prazo) != 1 || prazo <= 0)
     {
         printf("Valor inválido! Digite novamente: ");
         while(getchar() != '\n');
     }
     getchar();
 
-    int idx = -1;
+    int indice = -1;
     for(int i = 0; i < total_livros; i++)
     {
         if(compare_strings(Livros[i].titulo, livro) && Livros[i].status == 1)
         {
-            idx = i;
-            printf("Livro encontrado: %s\n", Livros[idx].titulo);
-
+            indice = i;
             break;
         }
     }
 
-    if(idx == -1)
+    if(indice == -1)
     {
         printf("\nLivro não encontrado ou indisponível.\n");
         return;
@@ -56,16 +54,22 @@ void emprestar_Livro()
         return;
     }
 
-    Livros[idx].status = 0;
+    Livros[indice].status = 0;
 
-    time_t now = time(NULL);
-    Emprestimos[total_emprestimos] = (Emprestimo)
-    {
-        .data_emprestimo = *localtime(&now),
-        .data_devolucao = *localtime(&(time_t){now + dias * 86400}),
-    };
-    strcpy(Emprestimos[total_emprestimos].livro_emprestado, Livros[idx].titulo);
+    time_t data_atual_t = time(NULL);
+    time_t data_devolucao_t = data_atual_t + (prazo * 86400);
+    
+    struct tm tm_emprestimo = *localtime(&data_atual_t);
+    struct tm tm_devolucao = *localtime(&data_devolucao_t);
+
+    Emprestimos[total_emprestimos].data_emprestimo = tm_emprestimo; 
+    Emprestimos[total_emprestimos].data_devolucao = tm_devolucao;
+    Emprestimos[total_emprestimos].status_emprestimo = 0;
+    
+    strcpy(Emprestimos[total_emprestimos].livro_emprestado, Livros[indice].titulo);
     Emprestimos[total_emprestimos].ID_usuario = ID_usuario;
+
+    Emprestimos[total_emprestimos].prazo_devolucao = prazo;
     
     total_emprestimos++;
     salvar_Arquivos();

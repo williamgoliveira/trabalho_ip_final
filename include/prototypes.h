@@ -23,7 +23,9 @@ typedef struct
     int ID_usuario;
     struct tm data_emprestimo;
     struct tm data_devolucao;
-    char livro_emprestado[50];
+    char livro_emprestado[100];
+    int prazo_devolucao;
+    int status_emprestimo;
 } Emprestimo;
 
 extern Livro Livros[100];
