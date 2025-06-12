@@ -37,22 +37,22 @@ void devolver_Livro(){
 
     double atraso = difftime(data_atual, data_esperada_t);
 
-    if (indice = -1 && atraso < 0)
+    if (indice == -1 )
     {
         printf("Termo inválido ou livro não foi emprestado.\n");
     }
     
     if (atraso > 0)
     {
-        int dias_atrasados = atraso/84600;
-        double multa_gerada = dias_atrasados*MULTA_POR_DIA;
+        int dias_atrasados = atraso / 84600;
+        double multa_gerada = dias_atrasados * MULTA_POR_DIA;
 
-        printf("Livro Devolvido com %d dias de atraso\n", dias_atrasados);
+        printf("Livro devolvido com %d dias de atraso\n", dias_atrasados);
         printf("Multa a ser paga: %.2f\n", multa_gerada);
     }
-
-    else{
-        printf("Livro devolvido no praso esperado!\n");
+    else
+    {
+        printf("Livro devolvido no prazo esperado!\n");
     }
 
     Emprestimos[indice].status_emprestimo = 1;

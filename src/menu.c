@@ -12,8 +12,9 @@ void menu(){
         printf("\n2. Mostrar Catálogo\n");
         printf("\n3. Buscar Livros\n");
         printf("\n4. Emprestar Livro\n");
-        printf("\n5. Relatório\n");
+        printf("\n5. Relatário\n");
         printf("\n6. Histórico de Empréstimos\n");
+        printf("\n7. Devolução de livros\n");
         printf("\n0. Sair\n");
         printf("\n-----------------------------");
         
@@ -34,6 +35,8 @@ void menu(){
                 relatorio_geral(); break;
             case 6:
                 relatorio_emprestimos(); break;
+            case 7:
+                devolver_Livro(); break;
             case 0:salvar_Arquivos(); 
                 printf("ENCERRANDO O PROGRAMA"); exit(0); break;
             default:
