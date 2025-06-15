@@ -19,7 +19,7 @@ void registrar_Livro()
     fgets(livro.autor, sizeof(livro.autor), stdin);
     livro.autor[strcspn(livro.autor, "\n")] = '\0';
 
-    printf("Informe o ano de publicação do livro: ");
+    printf("Informe o ano de publica??o do livro: ");
     scanf("%d", &livro.ano_publicacao);
     getchar();
 

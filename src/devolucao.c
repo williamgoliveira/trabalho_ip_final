@@ -6,18 +6,18 @@
 void devolver_Livro(){
     system("cls");
 
-    printf("<=-Devoluï¿½ï¿½o de Livro-=>\n");
+    printf("<=-Devolução de Livro-=>\n");
 
     if (total_emprestimos == 0)
     {
-        printf("Nenhum emprï¿½stimo cadastrado.\n");
+        printf("Nenhum empréstimo cadastrado.\n");
         return;
     }
 
     char livro_chave[100];
     
     getchar();
-    printf("Informe o nome do livro para devoluï¿½ï¿½o: ");
+    printf("Informe o nome do livro para devolução: ");
     fgets(livro_chave, sizeof(livro_chave), stdin);
     livro_chave[strcspn(livro_chave, "\n")] = '\0';
 
@@ -39,7 +39,7 @@ void devolver_Livro(){
 
     if (indice == -1 )
     {
-        printf("Termo invï¿½lido ou livro nï¿½o foi emprestado.\n");
+        printf("Termo inválido ou livro não foi emprestado.\n");
     }
     
     if (atraso > 0)
