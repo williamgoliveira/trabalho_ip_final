@@ -11,7 +11,7 @@ void registrar_Livro()
     scanf("%d", &livro.isbn);
     getchar();
 
-    printf("Informe o NOME do livro: ");
+    printf("Informe o TÍTULO do livro: ");
     fgets(livro.titulo, sizeof(livro.titulo), stdin);
     livro.titulo[strcspn(livro.titulo, "\n")] = '\0';
 
@@ -19,7 +19,7 @@ void registrar_Livro()
     fgets(livro.autor, sizeof(livro.autor), stdin);
     livro.autor[strcspn(livro.autor, "\n")] = '\0';
 
-    printf("Informe o ano de publica??o do livro: ");
+    printf("Informe o ANO de publicação do livro: ");
     scanf("%d", &livro.ano_publicacao);
     getchar();
 

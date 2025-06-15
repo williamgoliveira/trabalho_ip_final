@@ -9,9 +9,9 @@ void buscar_Livro(Livro Livros[100], int total_livros)
     
     
     printf("\nEscolha o tipo de busca:\n");
-    printf("1 - Buscar por t?tulo\n");
+    printf("1 - Buscar por título\n");
     printf("2 - Buscar por autor\n");
-    printf("Op??o: ");
+    printf("Opção: ");
     scanf("%d", &opcao);
     getchar();
      
@@ -43,19 +43,19 @@ void buscar_Livro(Livro Livros[100], int total_livros)
         if (match)
         {
             printf("\nLivro %d:\n", i+1);
-            printf("T?tulo: %s\n", Livros[i].titulo);
+            printf("Título: %s\n", Livros[i].titulo);
             printf("Autor: %s\n", Livros[i].autor);
             printf("ISBN: %d\n", Livros[i].isbn);
-            printf("G?nero: %s\n", Livros[i].categoria);
-            printf("Ano de Publi??o: %d\n", Livros[i].ano_publicacao);
+            printf("Gênero: %s\n", Livros[i].categoria);
+            printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
 
             if (Livros[i].status)
             {
-                printf("Status: Dispon?vel\n");
+                printf("Status: Disponível\n");
             }
             else
             {
-                printf("Status: Indispon?vel\n");
+                printf("Status: Indisponível\n");
             }
             encontrados++;
         }
