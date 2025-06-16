@@ -7,6 +7,9 @@ int total_emprestimos = 0;
 
 int main()
 {
+    SetConsoleOutputCP(1252);
+    SetConsoleCP(1252); 
+    
     setlocale(LC_ALL, "Portuguese");
     system("cls");
 
