@@ -10,11 +10,11 @@
 #define PURPLE      "\033[35m"
 
 void menu() {
-    system("cls"); // ou system("clear") no Linux/macOS
+    system("cls");
     int escolha;
 
     while (1) {
-        system("cls"); // limpa a tela a cada loop
+        system("cls");
 
         printf("%s%s         L I B R A   T E C H         %s\n", BOLD, UNDERLINE, RESET);
         printf("\n");
