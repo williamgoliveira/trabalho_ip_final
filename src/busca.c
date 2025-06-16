@@ -47,7 +47,7 @@ void buscar_Livro(Livro Livros[100], int total_livros)
             printf("Autor: %s\n", Livros[i].autor);
             printf("ISBN: %d\n", Livros[i].isbn);
             printf("Gênero: %s\n", Livros[i].categoria);
-            printf("Ano de Publição: %d\n", Livros[i].ano_publicacao);
+            printf("Ano de Publicação: %d\n", Livros[i].ano_publicacao);
 
             if (Livros[i].status)
             {

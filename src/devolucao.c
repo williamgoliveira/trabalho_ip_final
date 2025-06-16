@@ -48,7 +48,7 @@ void devolver_Livro(){
         double multa_gerada = dias_atrasados * MULTA_POR_DIA;
 
         printf("Livro devolvido com %d dias de atraso\n", dias_atrasados);
-        printf("Multa a ser paga: %.2f\n", multa_gerada);
+        printf("Multa a ser paga: R$%.2f\n", multa_gerada);
     }
     else
     {

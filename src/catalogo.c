@@ -2,6 +2,8 @@
 
 void catalogo()
 {
+    system("cls");
+
     if (total_livros == 0)
     {
         printf("Nenhum livro cadastrado.\n");
