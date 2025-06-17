@@ -23,9 +23,8 @@ void menu() {
         printf("%s[2]%s %sMostrar Catálogo%s\n", PURPLE, RESET, BOLD, RESET);
         printf("%s[3]%s %sBuscar Livros%s\n", PURPLE, RESET, BOLD, RESET);
         printf("%s[4]%s %sEmprestar Livro%s\n", PURPLE, RESET, BOLD, RESET);
-        printf("%s[5]%s %sRelatório Geral%s\n", PURPLE, RESET, BOLD, RESET);
-        printf("%s[6]%s %sHistórico de Empréstimos%s\n", PURPLE, RESET, BOLD, RESET);
-        printf("%s[7]%s %sDevolução de Livros%s\n", PURPLE, RESET, BOLD, RESET);
+        printf("%s[5]%s %sHistórico de Empréstimos%s\n", PURPLE, RESET, BOLD, RESET);
+        printf("%s[6]%s %sDevolução de Livros%s\n", PURPLE, RESET, BOLD, RESET);
         printf("%s[0]%s %sSair%s", PURPLE, RESET, BOLD, RESET);
         printf("\n%s                                      %s\n", UNDERLINE, RESET);
         printf("\n");
@@ -41,22 +40,21 @@ void menu() {
                 buscar_Livro(Livros, total_livros); break;
             case 4:
                 emprestar_Livro(); break;
+                
             case 5:
-                relatorio_geral(); break;
-            case 6:
                 relatorio_emprestimos(); break;
-            case 7:
+            case 6:
                 devolver_Livro(); break;
             case 0:
                 salvar_Arquivos();
                 printf("\n%sENCERRANDO O PROGRAMA...%s\n", RED, RESET);
                 exit(0);
             default:
-                printf("\n%sOpção inválida!%s\n", RED, RESET);
+                printf("\n%sOpï¿½ï¿½o invï¿½lida!%s\n", RED, RESET);
                 break;
         }
 
         printf("\nPressione ENTER para continuar...");
-        getchar(); getchar(); // pausa o programa até pressionar Enter
+        getchar(); getchar(); // pausa o programa atï¿½ pressionar Enter
     }
 }

@@ -49,8 +49,6 @@ void devolver_Livro();
 
 void catalogo();
 
-void relatorio_geral();
-
 void relatorio_emprestimos();
 
 char *compare_strings(const char *texto, const char *busca);
