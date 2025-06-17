@@ -37,21 +37,15 @@ void menu();
 
 void registrar_Livro();
 
-void relatorio();
-
 void salvar_Arquivos();
 
 void carregar_Arquivos();
-
-void converte_String(char *str);
 
 void buscar_Livro(Livro Livros[100] , int total_livros);
 
 void emprestar_Livro();
 
 void devolver_Livro();
-
-void gerar_Multa();
 
 void catalogo();
 
