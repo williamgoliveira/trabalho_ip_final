@@ -6,18 +6,18 @@
 void devolver_Livro(){
     system("cls");
 
-    printf("<=-Devolução de Livro-=>\n");
+    printf("<=-Devoluï¿½ï¿½o de Livro-=>\n");
 
     if (total_emprestimos == 0)
     {
-        printf("Nenhum empréstimo cadastrado.\n");
+        printf("Nenhum emprï¿½stimo cadastrado.\n");
         return;
     }
 
     char livro_chave[100];
     
     getchar();
-    printf("Informe o nome do livro para devolução: ");
+    printf("Informe o nome do livro para devoluï¿½ï¿½o: ");
     fgets(livro_chave, sizeof(livro_chave), stdin);
     livro_chave[strcspn(livro_chave, "\n")] = '\0';
 
@@ -39,7 +39,7 @@ void devolver_Livro(){
 
     if (indice == -1 )
     {
-        printf("Termo inválido ou livro não foi emprestado.\n");
+        printf("Termo invï¿½lido ou livro nï¿½o foi emprestado.\n");
     }
     
     if (atraso > 0)
@@ -48,7 +48,7 @@ void devolver_Livro(){
         double multa_gerada = dias_atrasados * MULTA_POR_DIA;
 
         printf("Livro devolvido com %d dias de atraso\n", dias_atrasados);
-        printf("Multa a ser paga: %.2f\n", multa_gerada);
+        printf("Multa a ser paga: R$%.2f\n", multa_gerada);
     }
     else
     {
